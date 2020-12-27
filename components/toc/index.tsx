@@ -42,15 +42,6 @@ export function Node(data: NodeData) {
   );
 }
 
-function offsetTop(node: HTMLElement) {
-  let top = 0;
-  do {
-    top += node.offsetTop;
-    node = node.offsetParent as HTMLElement;
-  } while (node && node !== document.body);
-  return top;
-}
-
 export function Toc(props: { data: NodeData[] }) {
   const [data, setData] = useState(props.data);
 
@@ -60,12 +51,14 @@ export function Toc(props: { data: NodeData[] }) {
     let spy: any;
     setTimeout(() => {
       try {
-        const Gumshoe = (window as any).Gumshoe;
-        spy = new Gumshoe(`.${styles.toc} a`, {
-          navClass: styles.active,
-          offset: 89,
-          reflow: true,
-        });
+        if (document.querySelectorAll(`.${styles.toc} a`).length) {
+          const Gumshoe = (window as any).Gumshoe;
+          spy = new Gumshoe(`.${styles.toc} a`, {
+            navClass: styles.active,
+            offset: 89,
+            reflow: true,
+          });
+        }
       } catch (error) {}
     }, 0);
 
