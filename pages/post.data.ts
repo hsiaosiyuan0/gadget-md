@@ -5,6 +5,7 @@ import unified from "unified";
 import markdown from "remark-parse";
 import unist from "unist";
 import vfile from "vfile";
+import { catalogFilename } from "gadget.js/ignition";
 
 export const WORDS = process.env.WORDS ?? process.cwd();
 export const BASENAME = process.env.BASE_NAME ?? "";
@@ -194,9 +195,9 @@ export interface CatalogItem {
 }
 
 /**
- * it's little hard to imagine the node hierarchies of `list` in remark's ast,
- * since remark's ast is somewhat verbose, consider to paste the markdown
- * content of your list into https://astexplorer.net/ to find out the ast
+ * it's little bit hard to imagine the node hierarchies of `list` in remark's ast,
+ * since remark's ast is somewhat verbose, consider to paste the markdown content
+ * of your list into https://astexplorer.net/ to find out the ast
  *
  * @param node
  */
@@ -236,7 +237,7 @@ function getListItemLink(
 }
 
 async function processCatalog(root: string) {
-  const file = vfile({ path: path.join(root, "catalog.md") });
+  const file = vfile({ path: path.join(root, catalogFilename) });
   file.contents = (await fs.promises.readFile((file as any).path)).toString();
 
   const links: { name: string; url: string; file: string }[] = [];
