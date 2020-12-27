@@ -8,7 +8,7 @@ import vfile from "vfile";
 
 export const catalogFilename = "_catalog.md";
 export const WORDS = process.env.WORDS ?? process.cwd();
-export const BASENAME = process.env.PUBLIC_URL ?? "";
+export const BASENAME = process.env.BASENAME ?? "";
 
 export interface RawMeta {
   slug?: string;
