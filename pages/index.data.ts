@@ -5,7 +5,9 @@ export default async () => {
   return {
     urls: posts.map((post) => {
       const path = (post.slug ?? post.filename).replace(/^\//, "");
-      return `${BASENAME}/post/${path}.html`;
+      return `${
+        BASENAME.endsWith("/") ? BASENAME : BASENAME + "/"
+      }post/${path}.html`;
     }),
   };
 };
