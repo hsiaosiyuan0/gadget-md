@@ -8,7 +8,7 @@ import vfile from "vfile";
 import { catalogFilename } from "gadget.js/ignition";
 
 export const WORDS = process.env.WORDS ?? process.cwd();
-export const BASENAME = process.env.BASE_NAME ?? "";
+export const BASENAME = process.env.PUBLIC_URL ?? "";
 
 export interface RawMeta {
   slug?: string;
