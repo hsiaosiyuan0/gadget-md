@@ -36,3 +36,4 @@ shared/**/*.js.map
 lib
 dist
 /docs
+/.printer

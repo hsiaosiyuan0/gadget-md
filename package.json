@@ -7,7 +7,7 @@
   "author": "hsiaosiyuan0@outlook.com",
   "license": "MIT",
   "dependencies": {
-    "gadget.js": "/Users/hsiao/Developer/gadget",
+    "gadget.js": "latest",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "rehype-raw": "^5.0.0",
