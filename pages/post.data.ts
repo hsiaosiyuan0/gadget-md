@@ -265,7 +265,10 @@ async function processCatalog(root: string) {
               if (link) {
                 if (link.name && link.url) {
                   const { name, url } = link;
-                  let u = BASENAME + "/post" + url;
+                  let u =
+                    (BASENAME.endsWith("/") ? BASENAME : BASENAME + "/") +
+                    "post" +
+                    url;
                   if (link.url.startsWith("/") && link.url.endsWith(".md")) {
                     u = u.slice(0, u.lastIndexOf(".")) + ".html";
                   }
