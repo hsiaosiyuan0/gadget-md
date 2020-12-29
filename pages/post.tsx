@@ -7,6 +7,7 @@ import visit from "unist-util-visit";
 import { Header } from "@/components/header";
 import { Sidebar } from "@/components/sidebar";
 import { Toc } from "@/components/toc";
+import { Head } from "gadget.js";
 import type { Post } from "./post.data";
 
 import styles from "@/pages/post.pure.scss";
@@ -48,9 +49,9 @@ export default function PostView(props: {
       <Header title={title} />
       <Sidebar data={catalog}></Sidebar>
       <div className={[styles.post, "line-numbers"].join(" ")}>
-        {/* <Head>
+        <Head>
           <title>{post.rawMeta.title}</title>
-        </Head> */}
+        </Head>
         <div key={post.filename}>
           {processor.processSync(post.content).result as string}
         </div>

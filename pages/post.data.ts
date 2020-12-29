@@ -5,10 +5,16 @@ import unified from "unified";
 import markdown from "remark-parse";
 import unist from "unist";
 import vfile from "vfile";
+import assert from "assert";
+
+assert.ok(process.env.ROOT, "process.env.ROOT should be set");
+assert.ok(process.env.WORDS, "process.env.WORDS should be set");
+assert.ok(process.env.BASENAME, "process.env.BASENAME should be set");
 
 export const catalogFilename = "_catalog.md";
-export const WORDS = process.env.WORDS ?? process.cwd();
-export const BASENAME = process.env.BASENAME ?? "";
+export const ROOT = process.env.ROOT;
+export const WORDS = process.env.WORDS;
+export const BASENAME = process.env.BASENAME;
 
 export interface RawMeta {
   slug?: string;
@@ -401,7 +407,7 @@ export async function tocOfContent(contents: string) {
 export default async () => {
   const store = path.join(WORDS);
   const { posts, catalog } = await processCatalog(store);
-  const meta = await readCtgMeta(path.join(WORDS, "gadget.yml"));
+  const meta = await readCtgMeta(path.join(ROOT, "gadget.yml"));
   return posts.map((post) => ({
     route: post.slug ?? post.filename,
     data: {
