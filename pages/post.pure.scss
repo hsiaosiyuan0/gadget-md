@@ -11,7 +11,7 @@
   color: rgb(32, 33, 36);
   min-height: calc(100vh - 48px - 65px);
 
-  pre:not([class~="language-"]) {
+  pre:not([class^="language-"]) {
     margin: 0 -40px;
     background: #f1f3f4;
     padding: 24px;
