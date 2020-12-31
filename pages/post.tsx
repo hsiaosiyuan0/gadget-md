@@ -4,6 +4,7 @@ import markdown from "remark-parse";
 import remark2rehype from "remark-rehype";
 import rehype2react from "rehype-react";
 import visit from "unist-util-visit";
+import gfm from "remark-gfm";
 import { Header } from "@/components/header";
 import { Sidebar } from "@/components/sidebar";
 import { Toc } from "@/components/toc";
@@ -16,6 +17,7 @@ export const outlet = "@/outlets/default.tsx";
 
 var processor = unified()
   .use(markdown)
+  .use(gfm)
   .use(() => {
     return function (node) {
       visit(node, "heading", (node) => {
