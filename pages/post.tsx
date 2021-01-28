@@ -3,12 +3,12 @@ import unified from "unified";
 import markdown from "remark-parse";
 import remark2rehype from "remark-rehype";
 import rehype2react from "rehype-react";
-import visit from "unist-util-visit";
 import gfm from "remark-gfm";
+import { Head } from "gadget.js";
 import { Header } from "@/components/header";
 import { Sidebar } from "@/components/sidebar";
 import { Toc } from "@/components/toc";
-import { Head } from "gadget.js";
+import { Heading } from "@/remark";
 import type { Post } from "./post.data";
 
 import styles from "@/pages/post.pure.scss";
@@ -17,21 +17,9 @@ export const outlet = "@/outlets/default.tsx";
 
 var processor = unified()
   .use(markdown)
+  .use(Heading)
+  // .use(Alert)
   .use(gfm)
-  .use(() => {
-    return function (node) {
-      visit(node, "heading", (node) => {
-        let name = "";
-        const children = node.children as any;
-        if (children[0] && children[0].type === "text") {
-          name = children[0].value;
-        }
-        node.data = {
-          hProperties: { id: name.replace(/\s/g, "") },
-        };
-      });
-    };
-  })
   .use(remark2rehype)
   .use(rehype2react, { createElement: React.createElement });
 

@@ -1,13 +1,5 @@
-import { scanPosts, WORDS, BASENAME } from "./post.data";
+import { retrieveConfig } from "../common";
 
 export default async () => {
-  const posts = await scanPosts(WORDS);
-  return {
-    urls: posts.map((post) => {
-      const path = (post.slug ?? post.filename).replace(/^\//, "");
-      return `${
-        BASENAME.endsWith("/") ? BASENAME : BASENAME + "/"
-      }post/${path}.html`;
-    }),
-  };
+  return retrieveConfig();
 };
