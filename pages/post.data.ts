@@ -21,7 +21,7 @@ export interface RawMeta {
 
 export interface Post {
   filename: string;
-  rawMeta: Record<string, RawMeta>;
+  rawMeta: RawMeta;
   slug: string;
   keywords: string[];
   content: string;
@@ -30,7 +30,7 @@ export interface Post {
 
 export interface Category {
   filename: string;
-  rawMeta: Record<string, any>;
+  rawMeta: RawMeta;
   slug: string;
   keywords: string[];
   mtime: number;
@@ -124,6 +124,8 @@ export async function scanPosts(dir: string) {
       }
       posts.push(post);
     } else if (meta.isDirectory()) {
+      if (fs.existsSync(path.join(path.parse(file).dir, ".ignore"))) return;
+
       const rawMeta = await readCtgMeta(file);
       const slug = `${pathStr}/${rawMeta.slug ?? filename}`;
       ctx.category = {
@@ -308,6 +310,8 @@ async function processCatalog(root: string) {
         content = (await fs.promises.readFile(file)).toString();
       } catch (error) {}
       const rawMeta = readPostMdMeta(content);
+      if (!rawMeta.title) rawMeta["title"] = filename;
+
       const slug = `${pathStr}/${rawMeta.slug ?? filename}`;
       const toc = await tocOfContent(content);
       return {
