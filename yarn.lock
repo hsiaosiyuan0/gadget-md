@@ -2301,10 +2301,10 @@ function-bind@^1.1.1:
   resolved "https://registry.yarnpkg.com/function-bind/-/function-bind-1.1.1.tgz#a56899d3ea3c9bab874bb9773b7c5ede92f4895d"
   integrity sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==
 
-gadget.js@0.0.15:
-  version "0.0.15"
-  resolved "https://registry.yarnpkg.com/gadget.js/-/gadget.js-0.0.15.tgz#99c234ed0cc1592ef0387cafcb0cb30e63681a7f"
-  integrity sha512-n9b5P5Hbsgw+rEAp1sGOb5Y2oJxm+JUWaFOi20u+y3sjJQFg2bLxuLsiKKd7fURJzL7xWmSojc6/P4yOtoJ9Tg==
+gadget.js@0.0.18:
+  version "0.0.18"
+  resolved "https://registry.yarnpkg.com/gadget.js/-/gadget.js-0.0.18.tgz#6efa64c7ce11645077d89ff797768750fa083eb1"
+  integrity sha512-opXfO2lcrMbmhbUprdiyZDbcfQ2qpRG6AC2C7JMjK2PTBNL+0UIeB2AQnKILVtqPbgpBxSLKlNVXz+XkrIH+3A==
   dependencies:
     "@babel/core" "^7.12.10"
     "@babel/plugin-proposal-class-properties" "^7.12.1"
