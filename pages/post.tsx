@@ -47,6 +47,12 @@ export default function PostView(props: {
         </div>
       </div>
       <Toc data={post.toc}></Toc>
+      <div className={styles.copyright}>
+        Made with{" "}
+        <a target="_blank" href="https://github.com/hsiaosiyuan0/gadget">
+          gadget
+        </a>
+      </div>
     </div>
   );
 }

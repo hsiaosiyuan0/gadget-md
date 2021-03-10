@@ -44,7 +44,6 @@ export default class MobileHtml extends Html {
         </head>
         <body>
           {children}
-
           <script
             src="https://cdn.jsdelivr.net/npm/prismjs@1.22.0/components/prism-core.min.js"
             data-manual
@@ -59,7 +58,11 @@ export default class MobileHtml extends Html {
           <script src="https://cdn.jsdelivr.net/npm/prismjs@1.22.0/components/prism-bash.min.js"></script>
           <script src="https://cdn.jsdelivr.net/npm/prismjs@1.22.0/components/prism-python.min.js"></script>
           <script src="https://cdn.jsdelivr.net/npm/prismjs@1.22.0/components/prism-xml-doc.min.js"></script>
-          <script src="https://cdn.jsdelivr.net/npm/prismjs@1.22.0/components/prism-docker.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/components/prism-docker.min.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/components/prism-rust.min.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/components/prism-nasm.min.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/components/prism-c.min.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/components/prism-cpp.min.js"></script>
 
           <script src="https://cdn.jsdelivr.net/npm/prismjs@1.22.0/plugins/toolbar/prism-toolbar.min.js"></script>
           <script src="https://cdn.jsdelivr.net/npm/prismjs@1.22.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>

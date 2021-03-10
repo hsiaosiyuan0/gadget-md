@@ -46,7 +46,7 @@
 
     .title {
       display: flex;
-      height: 24px;
+      min-height: 24px;
       align-items: center;
       box-sizing: border-box;
       width: calc(100% - 8px);
