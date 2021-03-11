@@ -7,9 +7,10 @@
   "author": "hsiaosiyuan0@outlook.com",
   "license": "MIT",
   "dependencies": {
-    "gadget.js": "0.0.18",
+    "gadget.js": "0.0.21",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-top-loading-bar": "^2.0.1",
     "rehype-raw": "^5.0.0",
     "rehype-react": "^6.1.0",
     "remark-gfm": "^1.0.0",

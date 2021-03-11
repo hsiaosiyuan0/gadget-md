@@ -1,4 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
+import LoadingBar from "react-top-loading-bar";
+import {
+  EventBus,
+  EventAfterRouteChanged,
+  EventBeforeRouteChanged,
+} from "gadget.js";
 import styles from "@/components/header/index.pure.scss";
 
 export function scrollToAnchor(hash: string, offset: number) {
@@ -30,6 +36,8 @@ export interface HeaderProps {
 }
 
 export function Header(props: HeaderProps) {
+  const bar = useRef<any>(null);
+
   useEffect(() => {
     function handleHashChange() {
       scrollToAnchor(window.location.hash, offset);
@@ -43,9 +51,21 @@ export function Header(props: HeaderProps) {
     };
   });
 
+  useEffect(() => {
+    EventBus.on(EventBeforeRouteChanged, () => {
+      bar.current?.continuousStart();
+    });
+    EventBus.on(EventAfterRouteChanged, () => {
+      bar.current?.complete();
+    });
+  }, []);
+
   return (
-    <div className={styles.header}>
-      <div className={styles.title}>{props.title}</div>
-    </div>
+    <>
+      <LoadingBar color="#2998ff" ref={bar} shadow={true} />
+      <div className={styles.header}>
+        <div className={styles.title}>{props.title}</div>
+      </div>
+    </>
   );
 }

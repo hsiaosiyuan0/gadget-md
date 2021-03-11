@@ -2301,10 +2301,10 @@ function-bind@^1.1.1:
   resolved "https://registry.yarnpkg.com/function-bind/-/function-bind-1.1.1.tgz#a56899d3ea3c9bab874bb9773b7c5ede92f4895d"
   integrity sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==
 
-gadget.js@0.0.18:
-  version "0.0.18"
-  resolved "https://registry.yarnpkg.com/gadget.js/-/gadget.js-0.0.18.tgz#6efa64c7ce11645077d89ff797768750fa083eb1"
-  integrity sha512-opXfO2lcrMbmhbUprdiyZDbcfQ2qpRG6AC2C7JMjK2PTBNL+0UIeB2AQnKILVtqPbgpBxSLKlNVXz+XkrIH+3A==
+gadget.js@0.0.21:
+  version "0.0.21"
+  resolved "https://registry.yarnpkg.com/gadget.js/-/gadget.js-0.0.21.tgz#b2b65a8f1cb31ce8c1880924f6f7784351774ed9"
+  integrity sha512-3zUSxdIkdPLuT0UGAB7YfPQ+1utY2pGbAtTBVclJAeTiOw35zO5tgYbBpI9OnNEIQkGTq9noU4Xwt2BnNLbQKg==
   dependencies:
     "@babel/core" "^7.12.10"
     "@babel/plugin-proposal-class-properties" "^7.12.1"
@@ -3860,6 +3860,11 @@ react-dom@^17.0.1:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     scheduler "^0.20.1"
+
+react-top-loading-bar@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/react-top-loading-bar/-/react-top-loading-bar-2.0.1.tgz#c8805ad9c1068766fdd3cadd414e67cfdf1878e9"
+  integrity sha512-wkRlK9Rte4TU817GDcjlsCoDOxrrnvsNvK609FKyio0EIrmmqjQDz5DB8HbN88CHNZBy5Lh/OBALc03ioWFPuQ==
 
 react@^17.0.1:
   version "17.0.1"

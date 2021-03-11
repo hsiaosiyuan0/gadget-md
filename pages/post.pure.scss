@@ -85,9 +85,29 @@
       border-bottom: 1px solid #dadce0;
     }
   }
+
+  h1 {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica,
+      STKaiti, SimSun, serif;
+    line-height: 1.1;
+  }
 }
 
 .copyright {
   text-align: center;
-  padding: 10px 0;;
+  padding: 10px 0;
+}
+
+.sidebar {
+  width: 15vw;
+}
+
+@media only screen and (max-width: 600px) {
+  .post {
+    width: 90vw;
+  }
+
+  .sidebar {
+    display: none;
+  }
 }
